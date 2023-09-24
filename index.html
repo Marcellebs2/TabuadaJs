@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleResponsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <div class="container">
+        <div class="content">
+            <div class="inputs">
+                <label for="txtn1">Digite um número:</label>
+                <input type="text" id="txtn1" required>
+                <label for="number">Até qual número?</label>
+                <input type="text" id="number" required>
+                <button onclick="calc()" class="btn">Calcular</button>
+            </div>
+        </div>
+        <div class="resultado">
+            <div class="result_content">
+                <p>Resultado:</p>
+                <div id="res"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calc(){
+            const tn1 = parseFloat(document.getElementById('txtn1').value)
+            const num = parseFloat(document.querySelector('input#number').value)
+            var res = document.getElementById('res')
+            let tabuada = ""
+
+            if(isNaN(tn1) || isNaN(num)){
+                res.innerHTML = 'Digite somente números em ambos os campos!'
+            }
+            else{
+                for(let i=0; i<=num; i++){
+                    tabuada += tn1 + " x " + i + " = " + (tn1 * i) + "<br>"
+                }
+                res.innerHTML = tabuada
+            }
+        }
+    </script>
+</body>
+</html>
