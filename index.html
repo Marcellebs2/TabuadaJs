@@ -27,6 +27,7 @@
                 <p>Resultado:</p>
                 <div id="res"></div>
             </div>
+            <div id="role"></div>
         </div>
     </div>
     <script>
@@ -34,6 +35,7 @@
             const tn1 = parseFloat(document.getElementById('txtn1').value)
             const num = parseFloat(document.querySelector('input#number').value)
             var res = document.getElementById('res')
+            var role = document.getElementById('role')
             let tabuada = ""
 
             if(isNaN(tn1) || isNaN(num)){
@@ -44,6 +46,7 @@
                     tabuada += tn1 + " x " + i + " = " + (tn1 * i) + "<br>"
                 }
                 res.innerHTML = tabuada
+                role.innerHTML = 'Role para baixo'
             }
         }
     </script>
